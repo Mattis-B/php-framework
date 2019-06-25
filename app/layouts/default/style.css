@@ -1,0 +1,25 @@
+body {
+	margin: 0px;
+	background-color: <?= $this->THEME['backgroundColor'] ?>;
+<? if(isset($_REQUEST['rainbow'])): ?>
+	will-change: background-color;
+	animation: rainbowBackground <?= (int)$_REQUEST['rainbow'] ? (int)$_REQUEST['rainbow']:20 ?>s linear infinite;
+<? endif ?>
+
+<? if(isset($_REQUEST['invert'])): ?>
+	filter: invert(<?= (double)$_REQUEST['invert'] ? (double)$_REQUEST['invert'] : 1 ?>);
+<? endif ?>
+}
+
+<? if(isset($_REQUEST['rainbow'])): ?>
+@keyframes rainbowBackground {
+	0% {background-color: #ff0000}
+	16% {background-color: #ffff00}
+	33% {background-color: #00ff00}
+	50% {background-color: #00ffff}
+	67% {background-color: #0000ff}
+	83% {background-color: #ff00ff}
+	100% {background-color: #ff0000}
+}
+<?= $_REQUEST['rainbow'] ?>
+<? endif ?>

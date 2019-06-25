@@ -1,0 +1,1 @@
+<p>Hello, <?= USER["name"] ?></p>

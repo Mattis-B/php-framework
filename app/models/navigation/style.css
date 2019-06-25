@@ -1,0 +1,54 @@
+<?
+preg_match_all('/[\dabcdef][\dabcdef]/', $this->THEME['primary'], $themeP);
+$themeP = $themeP[0];
+foreach($themeP as &$n){
+	$n = intval($n,16);
+}
+?>
+
+.navigation {
+	list-style-type: none;
+	-moz-list-style-type: none;
+	-moz-background-color: <?= $this->THEME['primary'] ?>f0;
+	background-color: <?= $this->THEME['primary'] ?>f0;
+	-moz-display: inline-block;
+	display: inline-block;
+	position: relative;
+	padding: 0;
+	border-radius: 2px;
+	margin-block-start:0;
+	margin-block-end:0;
+}
+
+.navigationTitle {
+	text-align: center;
+	font-size: 110%;
+	font-weight: bold;
+	padding: 6px 6px 1px 6px;
+}
+
+.navigationLink a {
+	text-decoration: none;
+	color: black;
+	display: block;
+}
+
+.navigationLink {
+	list-style-type: none;
+	-moz-list-style-type: none;
+	border: solid 4px #cccccc00;
+	border-radius: 13px;
+	text-align: center;
+	margin: 2px;
+	padding: 1px;
+}
+
+.navigationLink:hover {
+	background-color: #<?= ($themeP[0] >= 127.5 && $themeP[1] >= 127.5 && $themeP[2] >= 127.5) ? '000000' : 'ffffff'; ?>20;
+	border-color: #<?= ($themeP[0] >= 127.5 && $themeP[1] >= 127.5 && $themeP[2] >= 127.5) ? '000000' : 'ffffff'; ?>01;
+}
+
+
+.navigationLink:hover a {
+
+}
